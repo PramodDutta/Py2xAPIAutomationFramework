@@ -12,6 +12,7 @@
 
 import allure
 import pytest
+import logging
 
 
 from src.constants.api_constants import APIConstants
@@ -27,6 +28,8 @@ class TestCRUDBooking(object):
     @allure.description(
         "Verify that Full Update with the booking ID and Token is working.")
     def test_update_booking_id_token(self,create_token,get_booking_id):
+        logging.basicConfig(level=logging.INFO)
+        logger  = logging.getLogger(__name__)
         booking_id = get_booking_id
         token = create_token
         put_url = APIConstants.url_patch_put_delete(booking_id=booking_id)
@@ -37,10 +40,12 @@ class TestCRUDBooking(object):
             auth=None,
             in_json=False
         )
+        logger.info("Request is made"+ str(response))
         # Verification here & more
         verify_response_key(response.json()["firstname"],"Amit")
         verify_response_key(response.json()["lastname"],"Brown")
         verfiy_http_status_code(response_data=response,expect_data=200)
+        logger.info("Request status code" + str(response.status_code))
         
     @allure.title("Test CRUD operation Delete(delete)")
     @allure.description(
