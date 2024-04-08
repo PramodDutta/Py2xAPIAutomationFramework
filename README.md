@@ -40,3 +40,25 @@ Hybrid Custom Framework to Test the REST APIs
 
 ### To work wit JSON Schema
 ```pip install jsonschema```
+
+
+
+
+
+### How to run via Jenkins(CI/CD)
+
+  ![Screenshot 2024-04-08 at 7 55 21 AM](https://github.com/PramodDutta/Py2xAPIAutomationFramework/assets/1409610/f6901407-910b-4ea2-a329-0a4433f7e240)
+
+- Jenkins Run Process
+- Install the Jenkins - jenkins dowload
+- Install the JDK  (open JDK)
+- https://jdk.java.net/21/
+- Set it into the Global Config - http://localhost:8080/manage/configureTools/
+- Install the Plugins - http://localhost:8080/manage/pluginManager/
+  - Allure
+- HTML Report
+- GITHUB - Repo - https://github.com/PramodDutta/Py2xAPIAutomationFramework.git
+
+ 
+
+
